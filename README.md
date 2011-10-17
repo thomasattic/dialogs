@@ -12,26 +12,33 @@ http://dialogs.heroku.com/index.html
 
 Setup
 -------
-<script type="text/javascript">
-  $("body").dialogs();
-</script>
+
+// do NOT be wrapped in $(document).ready()
+$("body").dialogs();
+
 
 
 HTML
 -------
 The HTML follows these simple pattern:
 
-  <body class="carton"> <!-- class carton mandatory. -->
+  <!-- class carton mandatory. -->
+  <body class="carton">
 
     <div class="panes">
-      <div id="pane-a" class="pane"> <!-- only one pane is showed at a time under a carton -->
+
+      <!-- only one pane is showed at a time under a carton -->
+      <div id="pane-a" class="pane"> 
         <h1>Header</h1>
       </div>
       <div id="pane-b" class="pane">
       </div>
     </div>
-    <div id="dialogs"> 
-      <div id="progress-dialog" class="dialog"> <!-- dialog is showed when show() is called. (eg, $("#progress-dialog").show()) -->
+    <div id="dialogs">
+
+      <!-- dialog is showed when show() is called. --> 
+      <!-- (eg, $("#progress-dialog").show())      -->
+      <div id="progress-dialog" class="dialog"> 
         <h1>Dialog 1</h1>
       </div>
       <form id="browser-dialog" class="dialog" action="" method="POST">
