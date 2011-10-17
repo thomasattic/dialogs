@@ -4,6 +4,7 @@ require 'rubygems'
 require 'sinatra'
 
 class AppMain < Sinatra::Application
+  set :root, APP_ROOT
   get '/' do
     redirect '/index.html'
   end
