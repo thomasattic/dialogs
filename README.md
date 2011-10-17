@@ -8,7 +8,7 @@ It supports dialog similar to the one in jquery-ui, but with less than 2k minifi
 
 Example
 -------
-    http://dialogs.heroku.com/index.html
+http://dialogs.heroku.com/index.html
 
 Setup
 -------
