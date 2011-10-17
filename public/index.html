@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project</title>
+    <style type="text/css" media="screen">@import "./jslib/beedesk/dialogs.css";</style>
+    <style type="text/css" media="screen">
+      body {
+        line-height: 20px;
+        font-family: Arial, Verdana, sans-serif;
+        font-size: 12px;
+        color: #929292;
+      }
+    </style>
+    <style type="text/css" media="screen">
+      #browser-dialog {
+        width: 650px;
+        min-height: 400px;
+        background-color: #333;
+        color: darkgrey;
+      }
+      .spinnerfloat {
+        margin-left: auto; margin-right: auto;
+        width: 60px; height: 60px;
+      }
+      div.spinner {
+        width: 60px; height: 60px;
+      }
+    </style>
+    <script src="./jslib/lib/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./jslib/lib/jquery.tmpl.min.js" type="application/x-javascript" charset="utf-8"></script>
+    <script src="./jslib/lib/jquery.validate.min.js" type="application/x-javascript" charset="utf-8"></script>
+    <script src="./jslib/beedesk/dialogs.js" type="application/x-javascript" charset="utf-8"></script>    
+    <script id="item-template" type="text/x-jquery-tmpl">
+    </script>
+    <script type="text/javascript">
+      $("body").dialogs();
+      
+      $(document).bind('ready', function() {
+        $("#open-userdialog").bind("click", function() {
+          $("#user-dialog").show();
+        });
+      });
+	</script>
+  </head>
+  <body class="carton">
+    <div class="panes">
+      <div class="pane">
+        <h1>Header</h1>
+        <div id="content" class="splitview">
+          <div class="aside">
+             <h2>Aside</h2>
+             <ul class="menu-aside" data-ref="#views">
+             </ul>
+          </div>
+          <div class="main">
+             <h2>Main</h2>
+             <input id="open-userdialog" type="button" class="cancel" value="Open a dialog"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="dialogs">
+      <div id="progress-dialog" class="dialog" action="" method="POST">
+        <div class="container">
+          <h2><span>Loading...</span></h2>
+          <div class="spinnerfloat">
+            <div class="spinner animate">
+              <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div>
+              <div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div>
+              <div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div>
+            </div>
+          </div>
+          <span class="status">Connecting...</span>
+        </div>
+      </div>
+      <form id="browser-dialog" class="dialog" action="" method="POST">
+        <div class="container">
+          <h2>This website is optimized for <span>Chrome</span></h2>
+          Use Chrome for the best result
+          <br/>
+          <input type="button" class="cancel" value="Okay"/>
+        </div>
+      </form>
+      <form id="user-dialog" class="dialog" action="" method="POST">
+        <div class="container">
+          <h2><span>Your</span> Dialog</h2>
+          <br/>
+          <div class="spinnerfloat">
+            <div class="spinner animate">
+              <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div>
+              <div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div>
+              <div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div>
+            </div>
+          </div>
+          <br/>
+          <input type="button" class="cancel" value="Okay"/>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
