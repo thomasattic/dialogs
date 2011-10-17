@@ -22,7 +22,7 @@ HTML
 -------
 The HTML follows these simple pattern:
 
-<pre>
+<div>
   <!-- class carton mandatory. -->
   <body class="carton">
 
@@ -46,8 +46,8 @@ The HTML follows these simple pattern:
         <h1>Dialog 2</h1>
       </form>
     </div>
-  </div>
-</pre>
+  </body>
+</div>
 
 Credits
 -------
