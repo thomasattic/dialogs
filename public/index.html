@@ -1,101 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Project</title>
-    <style type="text/css" media="screen">@import "./jslib/beedesk/dialogs.css";</style>
-    <style type="text/css" media="screen">
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="./jslib/twitter/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      /* Override some defaults */
+      html, body {
+        background-color: #eee;
+      }
       body {
-        line-height: 20px;
-        font-family: Arial, Verdana, sans-serif;
-        font-size: 12px;
-        color: #929292;
+        padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
       }
+      .container > footer p {
+        text-align: center; /* center align it with the container */
+      }
+      .container {
+        width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+      }
+
+      /* The white background content wrapper */
+      .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+        -webkit-border-radius: 0 0 6px 6px;
+           -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+      /* Page header tweaks */
+      .page-header {
+        background-color: #f5f5f5;
+        padding: 20px 20px 10px;
+        margin: -20px -20px 20px;
+      }
+
+      /* Styles you shouldn't keep as they are for displaying this base example only */
+      .content .span10,
+      .content .span4 {
+        min-height: 500px;
+      }
+      /* Give a quick and non-cross-browser friendly divider */
+      .content .span4 {
+        margin-left: 0;
+        padding-left: 19px;
+        border-left: 1px solid #eee;
+      }
+
+      .topbar .btn {
+        border: 0;
+      }
+
     </style>
-    <style type="text/css" media="screen">
-      #browser-dialog {
-        width: 650px;
-        min-height: 400px;
-        background-color: #333;
-        color: darkgrey;
-      }
-      .spinnerfloat {
-        margin-left: auto; margin-right: auto;
-        width: 60px; height: 60px;
-      }
-      div.spinner {
-        width: 60px; height: 60px;
-      }
-    </style>
+
     <script src="./jslib/lib/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="./jslib/lib/jquery.tmpl.min.js" type="application/x-javascript" charset="utf-8"></script>
     <script src="./jslib/lib/jquery.validate.min.js" type="application/x-javascript" charset="utf-8"></script>
-    <script src="./jslib/beedesk/dialogs.js" type="application/x-javascript" charset="utf-8"></script>    
-    <script id="item-template" type="text/x-jquery-tmpl">
-    </script>
-    <script type="text/javascript">
-      $("body").dialogs();
-      
-      $(document).bind('ready', function() {
-        $("#open-userdialog").bind("click", function() {
-          $("#user-dialog").show();
-        });
-      });
-	</script>
+    <script src="./jslib/twitter/bootstrap-modal.js" type="application/x-javascript" charset="utf-8"></script>
+    <script src="./jslib/twitter/bootstrap-dropdown.js" type="application/x-javascript" charset="utf-8"></script>
+    <script src="./jslib/twitter/bootstrap-tabs.js" type="application/x-javascript" charset="utf-8"></script>
+    <script src="./jslib/twitter/bootstrap-popover.js" type="application/x-javascript" charset="utf-8"></script>    
+    <script src="./jslib/twitter/bootstrap-twipsy.js" type="application/x-javascript" charset="utf-8"></script>
+    <script src="./jslib/twitter/bootstrap-alerts.js" type="application/x-javascript" charset="utf-8"></script>
+    <script src="./jslib/twitter/bootstrap-scrollspy.js" type="application/x-javascript" charset="utf-8"></script>
   </head>
-  <body class="carton">
-    <div class="panes">
-      <div class="pane">
-        <h1>Header</h1>
-        <div id="content" class="splitview">
-          <div class="aside">
-             <h2>Aside</h2>
-             <ul class="menu-aside" data-ref="#views">
-             </ul>
-          </div>
-          <div class="main">
-             <h2>Main</h2>
-             <input id="open-userdialog" type="button" class="cancel" value="Open a dialog"/>
-          </div>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">Project name</a>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <form action="" class="pull-right">
+            <input class="input-small" type="text" placeholder="Username">
+            <input class="input-small" type="password" placeholder="Password">
+            <button class="btn" type="submit">Sign in</button>
+          </form>
         </div>
       </div>
     </div>
-    <div id="dialogs">
-      <div id="progress-dialog" class="dialog" action="" method="POST">
-        <div class="container">
-          <h2><span>Loading...</span></h2>
-          <div class="spinnerfloat">
-            <div class="spinner animate">
-              <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div>
-              <div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div>
-              <div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div>
-            </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+          <h1>Page name <small>Supporting text or tagline</small></h1>
+        </div>
+        <div class="row">
+          <div class="span10">
+            <h2>Main content</h2>
           </div>
-          <span class="status">Connecting...</span>
+          <div class="span4">
+            <h3>Secondary content</h3>
+          </div>
         </div>
       </div>
-      <form id="browser-dialog" class="dialog" action="" method="POST">
-        <div class="container">
-          <h2>This website is optimized for <span>Chrome</span></h2>
-          Use Chrome for the best result
-          <br/>
-          <input type="button" class="cancel" value="Okay"/>
-        </div>
-      </form>
-      <form id="user-dialog" class="dialog" action="" method="POST">
-        <div class="container">
-          <h2><span>Your</span> Dialog</h2>
-          <br/>
-          <div class="spinnerfloat">
-            <div class="spinner animate">
-              <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div>
-              <div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div>
-              <div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div>
-            </div>
-          </div>
-          <br/>
-          <input type="button" class="cancel" value="Okay"/>
-        </div>
-      </form>
-    </div>
+
+      <footer>
+        <p>&copy; Company 2011</p>
+      </footer>
+
+    </div> <!-- /container -->
+
   </body>
 </html>
